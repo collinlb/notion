@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+	<head>
+		<h1 id="greeting"></h1>
+	</head>
+	<body>
+		<script>
+			document.getElementById("header").innerHTML = "Hello, Collin";
+		</script>
+	</body>
+</html>
