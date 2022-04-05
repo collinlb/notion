@@ -8,10 +8,6 @@
 		<script>
 			function update()
 			{
-				const request = new XMLHttpRequest();
-				request.open("GET", "api.openweathermap.org/data/2.5/forecast?id=524901&appid=c336781b6b814c0e5fa41dbc45754025")
-				request.send();
-				request.onload = () => {console.log(JSON.parse(request.response))}
 				const date = new Date();
 				const seconds = date.getSeconds();
 				const minutes = date.getMinutes();
