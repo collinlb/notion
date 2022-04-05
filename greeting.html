@@ -9,14 +9,14 @@
 			function update()
 			{
 				const date = new Date();
-				const seconds = date.getSeconds();
-				const minutes = date.getMinutes();
-				const hours = date.getHours();
+				const seconds = String(date.getSeconds()).padStart("0", 1);
+				const minutes = String(date.getSeconds()).padStart("0", 1);
+				const hours = String(date.getSeconds()).padStart("0", 1);
 				let time = "evening"
 				if hours < 18 {time = "afternoon"}
 				if hours < 12 {time = "morning"}
 				document.getElementById("greeting").innerHTML = `Good ${time}, Collin`
-				document.getElementById("clock").innerHTML = `${hours}.padStart("0", 1):${minutes}.padStart("0", 1):${seconds}.padStart("0", 1)`;
+				document.getElementById("clock").innerHTML = `${hours}:${minutes}:${seconds}`;
 			}
 			update()
 			setInterval(update, 1000);
