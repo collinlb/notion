@@ -14,8 +14,8 @@
 				const hours = date.getHours();
 				const clock = `${String(hours).padStart(1, "0")}:${String(minutes).padStart(1, "0")}:${String(seconds).padStart(1, "0")}`;
 				let time = "evening";
-				if hours < 18 {time = "afternoon";}
-				if hours < 12 {time = "morning";}
+				if (hours < 18) {time = "afternoon";}
+				if (hours < 12) {time = "morning";}
 				document.getElementById("greeting").innerHTML = `Good ${time}, Collin`;
 				document.getElementById("clock").innerHTML = `${clock}`;
 			}
