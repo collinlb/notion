@@ -5,10 +5,17 @@
 	</title>
 	<body>
     	<script>
-		key = "c336781b6b814c0e5fa41dbc45754025";
-		city = "Buffalo";
-		json = response.json(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`));
-		console.log(json);
-	</script>
+			key = "c336781b6b814c0e5fa41dbc45754025";
+			city = "Buffalo";
+			function gettingJSON()
+			{
+        		document.write("jquery loaded");
+				$.getJSON(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`,function(json)
+				{
+					document.write(JSON.stringify(json));
+				});
+    		}
+			document.getElementById("weather").innerHTML = gettingJSON();
+		</script>
   	</body>
 </html>
