@@ -13,7 +13,7 @@
 			xhr.send();
 			xhr.onload = () =>
 			{
-    				const data = JSON.phrase(xhr.response);
+    				const data = JSON.parse(xhr.response);
     				console.log(data);
 			}
 		</script>
