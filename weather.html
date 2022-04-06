@@ -13,7 +13,7 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
-    				const weather = data.weather.main;
+    				const weather = JSON.stringify(data.weather.main);
 				const header = document.createElement("weather");
 				header.innerHTML = weather;
 				document.body.appendChild(header);
