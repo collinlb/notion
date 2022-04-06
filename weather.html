@@ -5,22 +5,11 @@
 	</title>
 	<body>
     	<script>
-      	const api = "c336781b6b814c0e5fa41dbc45754025";
-	const lat = 43.721210;
-	const lon = -79.945801;
-	const url = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api}";
-	let request = new XMLHttpRequest();
-      	request.open("GET", url, true);
-	request.onload = function()
-	{
- 		let obj = JSON.parse(this.response);
-		if (request.status >= 200 && request.status < 400)
-		{
-			let weather = String(obj.main);
-		}
-	}
-	request.send();
-	document.getElementById("weather").innerHTML = `${temp}`;
+		key = c336781b6b814c0e5fa41dbc45754025
+		city = "Buffalo"
+      	fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`)
+  			.then((response) => response.json())
+  			.then((data) => console.log(data));
 	</script>
   	</body>
 </html>
