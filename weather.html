@@ -5,11 +5,9 @@
 	</title>
 	<body>
     	<script>
-		key = "c336781b6b814c0e5fa41dbc45754025"
-		city = "Buffalo"
-      	fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`)
-  			.then((response) => response.json())
-  			.then((data) => console.log(data));
+	key = "c336781b6b814c0e5fa41dbc45754025"
+	city = "Buffalo"
+	json = response.json(fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}`))
 	</script>
   	</body>
 </html>
