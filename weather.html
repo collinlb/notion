@@ -8,7 +8,7 @@
       	const api = "c336781b6b814c0e5fa41dbc45754025";
 	const lat = 43.721210;
 	const lon = -79.945801;
-	const url = "https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api}";
+	const url = "https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api}";
 	let request = new XMLHttpRequest();
       	request.open("GET", url, true);
 	request.onload = function()
