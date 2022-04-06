@@ -6,9 +6,10 @@
 	<body>
     		<script>
 			const key = "c336781b6b814c0e5fa41dbc45754025";
-			const city = "Buffalo";
+			const lat = 42;
+			const lon = -79
 			const xhr = new XMLHttpRequest();
-			xhr.open('GET',url);
+			xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			xhr.send();
 			xhr.onload = () =>
 			{
