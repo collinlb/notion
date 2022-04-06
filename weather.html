@@ -14,8 +14,9 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
-    				document.getElementById("weather").innerHTML = data.weather.main;
+    				const weather = data.weather.main;
 			}
+			document.getElementById("weather").innerHTML = weather;
 		</script>
   	</body>
 </html>
