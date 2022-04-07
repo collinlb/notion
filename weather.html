@@ -10,12 +10,12 @@
 			const xhr = new XMLHttpRequest();
 			const icons =
 			{
-				$01d: "☀️", $02d: "☁️", $03d: "☁️",
-				$04d: "☁️", $09d: "🌧", $10d: "🌧",
-				$11d: "⛈", $13d: "🌨", $50d: "🌫",
-				$01n: "🌙", $02n: "☁️", $03n: "☁️",
-				$04n: "☁️", $09n: "🌧", $10n: "🌧",
-				$11n: "⛈", $13n: "🌨", $50n: "🌫"
+				$01d: "SUN", $02d: "CLOUD", $03d: "CLOUD",
+				$04d: "CLOUD", $09d: "RAIN", $10d: "RAIN",
+				$11d: "THUNDERSTORM", $13d: "SNOW", $50d: "FOG",
+				$01n: "MOON", $02n: "CLOUD", $03n: "CLOUD",
+				$04n: "CLOUD", $09n: "RAIN", $10n: "RAIN",
+				$11n: "THUNDERSTORM", $13n: "SNOW", $50n: "FOG"
 			}
 			xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			xhr.send();
