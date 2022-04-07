@@ -23,6 +23,7 @@
 			{
     				const data = JSON.parse(xhr.response);
     				const weather = data.weather[0].icon;
+				console.log(weather);
 				const header = document.createElement("weather");
 				header.appendChild(document.createTextNode(weather));
 				document.title.appendChild(header);
