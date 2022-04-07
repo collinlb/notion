@@ -22,8 +22,10 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
+				console.log(icons.data.weather[0].icon);
 				const weather = document.createElement("H1");
-				weather.appendChild(document.createTextNode(data.weather[0].icon));
+				const icon = document.createTextNode(icons.data.weather[0].icon);
+				weather.appendChild(icon);
 			}
 		</script>
   	</body>
