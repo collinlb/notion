@@ -13,11 +13,10 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
-    				const weather = data.weather[0].id;
+    				const weather = data.weather[0].main;
 				const header = document.createElement("weather");
 				header.innerHTML = weather;
 				document.body.appendChild(header);
-				console.log(data.weather[0].id, weather, typeof(weather));
 			}
 		</script>
   	</body>
