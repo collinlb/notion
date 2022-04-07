@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<title>
+		<h1 id = "weather"></h1>
 	</title>
 	<body>
     		<script>
@@ -22,12 +23,8 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
-    				const weather = data.weather[0].icon;
-				console.log(weather);
-				const header = document.createElement("weather");
-				header.appendChild(document.createTextNode(weather));
-				document.title.appendChild(header);
 			}
+			document.getElementById("weather").innerHTML = data.weather[0].icon;
 		</script>
   	</body>
 </html>
