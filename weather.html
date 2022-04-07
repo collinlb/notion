@@ -22,7 +22,8 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
-				console.log("This better fucking work.", data.weather[0].icon, icons.(data.weather[0].icon));
+				const iconcode = data.weather[0].icon;
+				console.log("This better fucking work.", iconcode, icons.iconcode);
 				const weather = document.createElement("H1");
 				const icon = document.createTextNode(icons.data.weather[0].icon);
 				weather.appendChild(icon);
