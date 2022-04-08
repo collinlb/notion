@@ -10,12 +10,12 @@
 			const xhr = new XMLHttpRequest();
 			const icons =
 			{
-				$01d: "SUN", $02d: "CLOUD", $03d: "CLOUD",
-				$04d: "CLOUD", $09d: "RAIN", $10d: "RAIN",
-				$11d: "THUNDERSTORM", $13d: "SNOW", $50d: "FOG",
-				$01n: "MOON", $02n: "CLOUD", $03n: "CLOUD",
-				$04n: "CLOUD", $09n: "RAIN", $10n: "RAIN",
-				$11n: "THUNDERSTORM", $13n: "SNOW", $50n: "FOG"
+				$01d: "SUN", 02d: "CLOUD", 03d: "CLOUD",
+				$04d: "CLOUD", 09d: "RAIN", 10d: "RAIN",
+				$11d: "THUNDERSTORM", 13d: "SNOW", 50d: "FOG",
+				$01n: "MOON", 02n: "CLOUD", 03n: "CLOUD",
+				$04n: "CLOUD", 09n: "RAIN", 10n: "RAIN",
+				$11n: "THUNDERSTORM", 13n: "SNOW", 50n: "FOG"
 			}
 			xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			xhr.send();
@@ -25,7 +25,7 @@
 				const iconcode = data.weather[0].icon;
 				console.log("This better fucking work.", iconcode, icons.iconcode);
 				const weather = document.createElement("H1");
-				const icon = document.createTextNode(icons.data.weather[0].icon);
+				const icon = document.createTextNode(icons.iconcode);
 				weather.appendChild(icon);
 			}
 		</script>
