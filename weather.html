@@ -16,17 +16,17 @@
 				"01n": "🌙", "02n": "☁️", "03n": "☁️",
 				"04n": "☁️", "09n": "🌧", "10n": "🌧",
 				"11n": "⛈", "13n": "🌧", "50n": "🌫"
-			}
+			};
 			xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			xhr.send();
 			xhr.onload = () =>
 			{
-    				const data = JSON.parse(xhr.response);
-				const header = document.createElement("h1");
-				const reference = String(data.weather[0].icon);
-				const content = document.createTextNode(icons.reference);
-				header.appendChild(content);
-			}
+    				var data = JSON.parse(xhr.response);
+			};
+			const header = document.createElement("h1");
+			const reference = String(data.weather[0].icon);
+			const content = document.createxTextNode(icons.reference);
+			header.appendChild(content);
 		</script>
   	</body>
 </html>
