@@ -19,13 +19,13 @@
 			}
 			xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			xhr.send();
-    			const data = JSON.parse(xhr.response);
-			const header = document.createElement("h1");
-			const reference = String(data.weather[0].icon)
-			const content = document.createTextNode(icons.reference);
-			header.appendChild(content);
 			xhr.onload = () =>
 			{
+    				const data = JSON.parse(xhr.response);
+				const header = document.createElement("h1");
+				const reference = String(data.weather[0].icon);
+				const content = document.createTextNode(icons.reference);
+				header.appendChild(content);
 			}
 		</script>
   	</body>
