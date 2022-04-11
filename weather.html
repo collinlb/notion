@@ -7,7 +7,6 @@
 			const key = "c336781b6b814c0e5fa41dbc45754025";
 			const lat = 42;
 			const lon = -79;
-			const xhr = new XMLHttpRequest();
 			const icons =
 			{
 				"01d": "☀️", "02d": "☁️", "03d": "☁️",
@@ -17,15 +16,12 @@
 				"04n": "☁️", "09n": "🌧", "10n": "🌧",
 				"11n": "⛈", "13n": "🌧", "50n": "🌫"
 			};
-			xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
-			xhr.send();
-			xhr.onload = () =>
-			{
-    				var data = JSON.parse(xhr.response);
-			};
-			console.log("Data:", data);
+			fetch("https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}")
+				.then((response) => {if (response.ok) {return response.json();} else {throw new Error("NETWORK RESPONSE ERROR");}})
+				.then(data => {console.log(data); displayCocktail(data);})
+				.catch((error) => console.error("FETCH ERROR:", error))
 			const header = document.createElement("h1");
-			const reference = String(data.weather[0].icon);
+			const reference = String("01d");
 			const content = document.createTextNode(icons.reference);
 			header.appendChild(content);
 		</script>
