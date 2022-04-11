@@ -21,15 +21,15 @@
 				if (hours < 18) {time = "afternoon";}
 				if (hours < 12) {time = "morning";}
 				
-				greeting.innerHTML = `Good ${time}, Collin`;
-				clock.innerHTML = `${clock}`;
+				greetingElement.innerHTML = `Good ${time}, Collin`;
+				clockElement.innerHTML = `${clock}`;
 				
-				greeting.style.color = "#37352F";
-				clock.style.color = "#37352F";
+				greetingElement.style.color = "#37352F";
+				clockElement.style.color = "#37352F";
 				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
 				{
-					greeting.style.color = "#E1E1E1";
-					clock.style.color = "#E1E1E1";
+					greetingElement.style.color = "#E1E1E1";
+					clockElement.style.color = "#E1E1E1";
 				}
 			}
 			update();
