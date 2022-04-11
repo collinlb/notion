@@ -22,9 +22,9 @@
 			xhr.onload = () =>
 			{
     				const data = JSON.parse(xhr.response);
-				const iconcode = String(data.weather[0].icon);
 				const header = document.createElement("h1");
-				const content = document.createTextNode(icons.(String(data.weather[0].icon)));
+				const reference = String(data.weather[0].icon)
+				const content = document.createTextNode(icons.reference);
 				header.appendChild(content);
 			}
 		</script>
