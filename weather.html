@@ -23,10 +23,10 @@
 			{
     				var data = JSON.parse(xhr.response);
 			};
-			console.log(data);
+			console.log("Data:", data);
 			const header = document.createElement("h1");
 			const reference = String(data.weather[0].icon);
-			const content = document.createxTextNode(icons.reference);
+			const content = document.createTextNode(icons.reference);
 			header.appendChild(content);
 		</script>
   	</body>
