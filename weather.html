@@ -20,9 +20,9 @@
 			async function getapi(url)
 			{
 				const response = await fetch(url);
-				var data = await response.json();
-				console.log(data);
-				setheader(data.weather[0].main);
+				const data = await response.json();
+				const icon = data.weather[0].icon;
+				setheader(icons.icon);
 			}
 			function setheader(data)
 			{
