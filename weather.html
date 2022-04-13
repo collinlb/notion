@@ -3,6 +3,7 @@
 	<title>
 	</title>
 	<body>
+		<h1 id = "header"></h1>
     		<script>
 			const key = "c336781b6b814c0e5fa41dbc45754025";
 			const lat = 42;
@@ -24,8 +25,7 @@
 			}
 			function setheader(data)
 			{
-				let header = document.createElement("h1");
-				header.appendChild(document.createTextNode(data));
+				document.getElementById("header").innerHTML = data;
 			}
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 		</script>
