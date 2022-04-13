@@ -22,7 +22,7 @@
 				const response = await fetch(url);
 				const data = await response.json();
 				const icon = String(data.weather[0].icon);
-				console.log(data.weather[0].icon, icon, icons.icon);
+				console.log(data.weather[0].icon, icon, typeof(icon), icons."01d", icons.icon);
 				setheader(icons.icon);
 			}
 			function setheader(data)
