@@ -22,7 +22,7 @@
 				const response = await fetch(url);
 				var data = await response.json();
 				console.log(data);
-				setheader(data.weather[1].main);
+				setheader(data.weather[0].main);
 			}
 			function setheader(data)
 			{
