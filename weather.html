@@ -21,8 +21,8 @@
 			{
 				const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 				var data = await response.json();
+				console.log(data);
 			}
-			console.log(data);
 		</script>
   	</body>
 </html>
