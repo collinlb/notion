@@ -21,7 +21,7 @@
 			{
 				const response = await fetch(url);
 				const data = await response.json();
-				const icon = data.weather[0].icon;
+				const icon = String(data.weather[0].icon);
 				setheader(icons.icon);
 			}
 			function setheader(data)
