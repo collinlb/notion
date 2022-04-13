@@ -16,24 +16,17 @@
 				"04n": "☁️", "09n": "🌧", "10n": "🌧",
 				"11n": "⛈", "13n": "🌧", "50n": "🌫"
 			};
-			fetch("https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}")
-				.then((response) => 
-				{
-					if (response.ok)
-					{
-						return response.json();
-					}
-					else
-					{
-						throw new Error("NETWORK RESPONSE ERROR");
-					}
-				})
-				.then(data =>
-				{
-					console.log(data);
-					displayCocktail(data);
-				})
-				.catch((error) => console.error("FETCH ERROR:", error));
+			let response = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}");
+			if (response.ok)
+			{
+				let json = await response.json();
+			}
+			else
+			{
+				alert("ERROR: ${response.status}")
+			}
+			let text = await response.text();
+			console.log(text);
 		</script>
   	</body>
 </html>
