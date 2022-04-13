@@ -16,14 +16,14 @@
 				"04n": "☁️", "09n": "🌧", "10n": "🌧",
 				"11n": "⛈", "13n": "🌧", "50n": "🌫"
 			};
-			let response = fetch("https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}");
+			let response = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			if (response.ok)
 			{
 				let json = response.json();
 			}
 			else
 			{
-				alert("ERROR: ${response.status}")
+				alert(`ERROR: ${response.status}`)
 			}
 			let text = response.text();
 			console.log(text);
