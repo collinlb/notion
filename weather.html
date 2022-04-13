@@ -21,9 +21,13 @@
 			{
 				const response = await fetch(url);
 				var data = await response.json();
+				setheader(data.weather[1])
+			}
+			function setheader(data)
+			{
+				document.getElementById("header").innerHTML = data;
 			}
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
-			document.getElementById("header").innerHTML = data.weather[1];
 		</script>
   	</body>
 </html>
