@@ -23,15 +23,15 @@
 				const response = await fetch(url);
 				const data = await response.json();
 				icon = String(data.weather[0].icon);
-				console.log(icon);
 			}
 			navigator.geolocation.getCurrentPosition(function(position)
 			{
 				lon = position.coords.longitude;
 				lat = position.coords.latitude;
+				console.log(typeof(position.coords.longitude, position.coords.latitude));
 			});
+			console.log(lon, lat);
 			getAPI(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
-			console.log(lat, lon, icons, icon, icons[icon]);
 			document.getElementById("header").innerHTML = icons[icon];
 		</script>
   	</body>
