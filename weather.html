@@ -29,6 +29,7 @@
 				lon = position.coords.longitude;
 				lat = position.coords.latitude;
 				getAPI(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
+				console.log(lat, lon, icons, icon, icons[icon]);
 				document.getElementById("header").innerHTML = icons[icon];
 			});
 		</script>
