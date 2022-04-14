@@ -18,21 +18,24 @@
 			let lat;
 			let lon;
 			let icon;
+			function getLocation()
+			{
+				navigator.geolocation.getCurrentPosition
+				({
+					recordPosition(position);	
+				});
+			}
+			function recordPosition(position)
+			{
+				lon = position.coords.longitude;
+				lat = position.coords.latitude;
+			}
 			async function getAPI(url)
 			{
 				const response = await fetch(url);
 				const data = await response.json();
-				icon = String(data.weather[0].icon);
 			}
-			navigator.geolocation.getCurrentPosition(function(position)
-			{
-				lon = position.coords.longitude;
-				lat = position.coords.latitude;
-				console.log(typeof(position.coords.longitude, position.coords.latitude));
-			});
-			console.log(lon, lat);
 			getAPI(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
-			document.getElementById("header").innerHTML = icons[icon];
 		</script>
   	</body>
 </html>
