@@ -20,8 +20,8 @@
 			let icon;
 			navigator.geolocation.getCurrentPosition(function(position)
 			{
-				let lon = (position.coords.longitude).toFixed(2);
-				let lat = (position.coords.latitude).toFixed(2);
+				lon = position.coords.longitude;
+				lat = position.coords.latitude;
 				console.log(lon, lat);
 			});
 			function setHeader(data)
