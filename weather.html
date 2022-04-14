@@ -18,18 +18,18 @@
 			let lat;
 			let lon;
 			let icon;
-			navigator.geolocation.getCurrentPosition(function(position)
-			{
-				lon = position.coords.longitude;
-				lat = position.coords.latitude;
-				console.log(lon, lat);
-			});
 			function setHeader(data)
 			{
 				document.getElementById("header").innerHTML = data;
 			}
 			async function getAPI(url)
 			{
+				navigator.geolocation.getCurrentPosition(function(position)
+				{
+					lon = position.coords.longitude;
+					lat = position.coords.latitude;
+					console.log(lon, lat);
+				});
 				const response = await fetch(url);
 				const data = await response.json();
 				icon = String(data.weather[0].icon);
