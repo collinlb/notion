@@ -17,18 +17,19 @@
 				"04n": "☁️", "09n": "🌧", "10n": "🌧",
 				"11n": "⛈", "13n": "🌧", "50n": "🌫"
 			};
+			var icon;
 			async function getapi(url)
 			{
 				const response = await fetch(url);
 				const data = await response.json();
-				const icon = String(data.weather[0].icon);
-				setheader(icons[icon]);
+				var icon = String(data.weather[0].icon);
 			}
 			function setheader(data)
 			{
 				document.getElementById("header").innerHTML = data;
 			}
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
+			setheader(icons[icon]);
 		</script>
   	</body>
 </html>
