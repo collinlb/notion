@@ -29,6 +29,7 @@
 				document.getElementById("header").innerHTML = data;
 			}
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
+			console.log(icon, icons[icon]);
 			setheader(icons[icon]);
 		</script>
   	</body>
