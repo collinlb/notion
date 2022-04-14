@@ -18,12 +18,12 @@
 			let lat;
 			let lon;
 			let icon;
-			navigator.geolocation.getCurrentPosition(getLatLon(position));
-			function getLatLon(position)
+			navigator.geolocation.getCurrentPosition(function(position)
 			{
-				lon = position.coords.longitude;
-				lat = position.coords.latitude;
-			}
+				let lon = position.coords.longitude;
+				let lat = position.coords.latitude;
+				console.log(lon, lat);
+			});
 			function setHeader(data)
 			{
 				document.getElementById("header").innerHTML = data;
@@ -34,7 +34,7 @@
 				const data = await response.json();
 				icon = String(data.weather[0].icon);
 			}
-			getLatLon();
+			console.log(lon, lat);
 			getAPI(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			setHeader(icons[icon]);
 		</script>
