@@ -23,11 +23,13 @@
 				const response = await fetch(url);
 				const data = await response.json();
 				var icon = String(data.weather[0].icon);
+				console.log(icon);
 			}
 			function setheader(data)
 			{
 				document.getElementById("header").innerHTML = data;
 			}
+			console.log(icon);
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 			setheader(icons[icon]);
 		</script>
