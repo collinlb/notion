@@ -18,23 +18,25 @@
 			let lat;
 			let lon;
 			let icon;
-			navigator.geolocation.getCurrentPosition(function(location)
+			navigator.geolocation.getCurrentPosition(getLatLon);
+			function getLatLon(position)
 			{
-				lat = location.coords.latitude;
-				lon = location.coords.longitude;
-			});
-			async function getapi(url)
+				lon = position.coords.longitude;
+				lat = position.coords.latitude;
+			}
+			function setHeader(data)
+			{
+				document.getElementById("header").innerHTML = data;
+			}
+			async function getAPI(url)
 			{
 				const response = await fetch(url);
 				const data = await response.json();
 				icon = String(data.weather[0].icon);
 			}
-			function setheader(data)
-			{
-				document.getElementById("header").innerHTML = data;
-			}
-			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
-			setheader(icons[icon]);
+			getLatLon();
+			getAPI(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
+			setHeader(icons[icon]);
 		</script>
   	</body>
 </html>
