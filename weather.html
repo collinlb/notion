@@ -3,19 +3,19 @@
 	<title>
 	</title>
 	<body>
-		<h1 id = "header"></h1>
+		<img id="weather">
     		<script>
 			const key = "c336781b6b814c0e5fa41dbc45754025";
 			const lat = 42.96395;
 			const lon = -78.73781;
 			const icons =
 			{
-				"01d": "☀️", "02d": "☁️", "03d": "☁️",
-				"04d": "☁️", "09d": "🌧", "10d": "🌧",
-				"11d": "⛈", "13d": "🌨", "50d": "🌫",
-				"01n": "🌙", "02n": "☁️", "03n": "☁️",
-				"04n": "☁️", "09n": "🌧", "10n": "🌧",
-				"11n": "⛈", "13n": "🌧", "50n": "🌫"
+				"01d": "images/clearday.png", "02d": "images/partlycloudyday.png", "03d": "images/cloudyday.png",
+				"04d": "images/cloudyday.png", "09d": "images/rainyday.png", "10d": "images/partlyrainyday.png",
+				"11d": "images/thunderstormday.png", "13d": "images/snowyday.png", "50d": "images/foggyday.png",
+				"01n": "images/clearnight.png", "02n": "images/partlycloudynight.png", "03n": "images/cloudynight.png",
+				"04n": "images/cloudynight.png", "09n": "images/rainynight.png", "10n": "images/partlyrainynight.png",
+				"11n": "images/thunderstormnight.png", "13n": "images/snowynight.png", "50n": "images/foggynight.png"
 			};
 			async function getapi(url)
 			{
@@ -26,7 +26,7 @@
 			};
 			function setheader(data)
 			{
-				document.getElementById("header").innerHTML = data;
+				document.getElementById("weather").src = data;
 			};
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 		</script>
