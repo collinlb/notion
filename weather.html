@@ -2,6 +2,13 @@
 <html>
 	<head>
 		<img id="weather">
+		<style>
+			weather
+			{
+				max-width: 25%;
+				height: auto;
+			}
+		</style>
     		<script>
 			const key = "c336781b6b814c0e5fa41dbc45754025";
 			const lat = 42.96395;
@@ -25,7 +32,6 @@
 			function setimage(data)
 			{
 				document.getElementById("weather").src = data;
-				document.getElementById("weather").style = "max-width: 25%;"
 			};
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 		</script>
