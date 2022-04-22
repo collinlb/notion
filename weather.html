@@ -27,16 +27,14 @@
 				const data = await response.json();
 				const weather = String(data.weather[0].icon);
 				const kelvin = String(data.main[0].temp);
-				switch(kelvin)
+				let temp = tempstates[1]
+				if(kelvin < 277.5944)
 				{
-					case < 277.5944:
-						const temp = tempstates[0];
-						break;
-					case > 294.2611:
-						const temp = tempstates[1];
-						break;
-					default:
-						const temp = tempstates[2];
+					temp = tempstates[0]
+				}
+				if(kelvin > 293.7056)
+				{
+					temp = tempstates[2]
 				}
 				setimages(weatherstates[weather], temp);
 			};
