@@ -26,7 +26,7 @@
 				const response = await fetch(url);
 				const data = await response.json();
 				const weather = String(data.weather[0].icon);
-				const kelvin = String(data.main[0].temp);
+				const kelvin = String(data.main.temp);
 				let temp = tempstates[1]
 				if(kelvin < 277.5944)
 				{
