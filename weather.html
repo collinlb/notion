@@ -4,14 +4,14 @@
 		<style>
 			.weather
 			{
-				max-width: 25%;
+				width: 25%;
 			}
 		</style>
     		<script>
 			const key = "c336781b6b814c0e5fa41dbc45754025";
 			const lat = 42.96395;
 			const lon = -78.73781;
-			const icons =
+			const weatherstates =
 			{
 				"01d": "images/clearday.png", "02d": "images/partlycloudyday.png", "03d": "images/cloudyday.png",
 				"04d": "images/partlycloudyday.png", "09d": "images/rainyday.png", "10d": "images/partlyrainyday.png",
@@ -20,21 +20,39 @@
 				"04n": "images/partlycloudynight.png", "09n": "images/rainynight.png", "10n": "images/partlyrainynight.png",
 				"11n": "images/thunderstormnight.png", "13n": "images/snowynight.png", "50n": "images/foggynight.png"
 			};
+			const tempstates =
+			{
+				"images/coldthermometer.png", "images/warmthermometer.png", "images/hotthermometer.png"
+			}
 			async function getapi(url)
 			{
 				const response = await fetch(url);
 				const data = await response.json();
-				const icon = String(data.weather[0].icon);
-				setimage(icons[icon]);
+				const weather = String(data.weather[0].icon);
+				const kelvin = String(data.main[0].temp);
+				switch(kelvin)
+				{
+					case < 277.5944:
+						const temp = tempstates[0];
+						break;
+					case > 294.2611:
+						const temp = tempstates[1];
+						break;
+					default:
+						const temp = tempstates[2];
+				}
+				setimages(weatherstates[weather], temp);
 			};
-			function setimage(data)
+			function setimages(weather, temp)
 			{
-				document.getElementById("weather").src = data;
+				document.getElementById("weather").src = weather;
+				document.getElementById("temp").src = temp;
 			};
 			getapi(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${key}`);
 		</script>
 	</head>
 	<body>
 		<img id="weather" class="weather">
+		<img id="temperature" class="temperature">
   	</body>
 </html>
