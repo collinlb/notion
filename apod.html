@@ -27,9 +27,9 @@
 				const title = document.getElementById("title");
 				const image = document.getElementById("apod");
 				const description = document.getElementById("description");
-				title.content = data.hdurl.title;
+				title.innerHTML = data.hdurl.title;
 				image.src = data.url;
-				description.content = data.explanation;
+				description.innerHTML = data.explanation;
 			});
 		</script>
 	</head>
