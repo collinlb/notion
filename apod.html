@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<script>
-			const key = "bPxYucYsplxlo6u1E8ikADXYYDrF3qIo6jst9iq9";
+			const key = "rf8TOgywhrHJ96peHAIUwX04AIezst88Qg8ig4Rd";
 			function httpGet(theUrl)
 			{
 				let xmlHttpReq = new XMLHttpRequest();
@@ -10,7 +10,7 @@
 				xmlHttpReq.send(null);
 				return xmlHttpReq.responseText;
 			}
-			console.log(httpGet("https://api.nasa.gov/planetary/apod?api_key=${key}"));
+			console.log(httpGet(`https://api.nasa.gov/planetary/apod?api_key=${key}`));
 		</script>
 	</head>
 	<body>
