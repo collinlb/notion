@@ -24,7 +24,7 @@
 			httpGetAsync(`https://api.nasa.gov/planetary/apod?api_key=${key}`, function(result)
 			{
 				const data = JSON.parse(result);
-				const title = document.getElementById("title);
+				const title = document.getElementById("title");
 				const image = document.getElementById("apod");
 				const description = document.getElementById("description");
 				title.content = data.hdurl.title;
