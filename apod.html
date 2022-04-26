@@ -6,7 +6,7 @@
 			function httpGetAsync(theUrl, callback)
 			{
 				let xmlHttpReq = new XMLHttpRequest();
-				xmlHttpReq.onreadystatechange = new XMLHttpRequest()
+				xmlHttpReq.onreadystatechange = function()
 				{
 					if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200) {callback(xmlHttpReq.responseText)}
 				}
