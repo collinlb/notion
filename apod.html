@@ -16,10 +16,10 @@
 			}
 			httpGetAsync(`https://api.nasa.gov/planetary/apod?api_key=${key}`, function(result)
 			{
-				const data = result;
+				const data = JSON.parse(result);
 				const img = document.getElementById("apod");
-				console.log(data, data[6]);
-				img.src = data[6];
+				console.log(data.url);
+				img.src = data.url;
 			});
 		</script>
 	</head>
