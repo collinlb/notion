@@ -1,7 +1,18 @@
 <!doctype html>
 <html>
 	<head>
+		<script>
+			function httpGet()
+			{
+				let xmlHttpReq = new XMLHttpRequest();
+				xmlHttpReq.open("GET", theUrl, false);
+				xmlHttpReq.send(null);
+				return xmlHttpReq.responseText;
+			}
+			console.log(httpGet("https://api.nasa.gov/planetary/apod"));
+		</script>
 	</head>
 	<body>
+		<img class="apod">
 	</body>
 </html>
