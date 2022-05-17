@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<h3 id="title" class="title"></h3>
+		<img id="apod" class="apod">
+		<p id="description" class="description"></p>
+		<style>
+			.title
+			{
+				font-family: system-ui;
+				font-style: bold;
+				text-align: right;
+			}
+			.apod
+			{
+				max-width: 100vw;
+				max-height: 100vh;
+			}
+			.description
+			{
+				font-family: system-ui;
+				font-style: regular;
+				font-size: 0.75em;
+				text-align: right;
+			}
+		</style>
+		<script>
+			const key = "rf8TOgywhrHJ96peHAIUwX04AIezst88Qg8ig4Rd";
+			const titleElement = document.getElementById("title");
+			const imageElement = document.getElementById("apod");
+			const descriptionElement = document.getElementById("description");
+			console.log(titleElement, imageElement, descriptionElement);
+			function httpGetAsync(theUrl, callback)
+			{
+				let xmlHttpReq = new XMLHttpRequest();
+				xmlHttpReq.onreadystatechange = function()
+				{
+					if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200) {callback(xmlHttpReq.responseText)}
+				}
+				xmlHttpReq.open("GET", theUrl, true);
+				xmlHttpReq.send(null);
+				return xmlHttpReq.responseText;
+			}
+			httpGetAsync(`https://api.nasa.gov/planetary/apod?api_key=${key}`, function(result)
+			{
+				const data = JSON.parse(result);
+				titleElement.innerHTML = data.title;
+				imageElement.src = data.url;
+				descriptionElement.innerHTML = data.explanation;
+			});
+			function update()
+			{
+				titleElement.style.color = "#37352F";
+				descriptionElement.style.color = "#37352F";
+				if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+				{
+					titleElement.style.color = "#E1E1E1";
+					descriptionElement.style.color = "#E1E1E1";
+				}
+			}
+			update();
+			setInterval(update, 1000);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
