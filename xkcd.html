@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+	<head>
+		<img id="img"></img>
+		<script>
+			$.getJson("https://xkcd.com/info.0.json", setImage(data));
+			function setImage(data)
+			{
+				document.getElementById("img").src = data;
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
